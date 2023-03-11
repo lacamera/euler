@@ -4,9 +4,6 @@
 -- we can see that the 6th prime is 13.
 --
 -- What is the 10 001st prime number?
+import Euler (primes)
 
--- Trial division for simplicity.
-primes = s [2..] where
-    s (p:xs) = p:s [x| x <- xs, (mod x p) > 0]
-
-main = print $ primes !! 10000
+main = print (primes !! 10000)

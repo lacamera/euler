@@ -6,5 +6,5 @@
 --
 -- Find the largest palindrome made from the product of
 -- two 3-digit numbers.
-main = print $ maximum [a*b | a <- [100..999], b <- [100..999],
-  (reverse $ show (a*b)) == show (a*b)]
+main = print (maximum [a*b| a <- [100..999], b <- [100..999],
+  (reverse $ show (a*b)) == show (a*b)])

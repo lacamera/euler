@@ -8,6 +8,6 @@
 -- do not exceed four million, find the sum of the even-valued terms.
 
 -- Lazy infinite list computation with O(n) additions.
-fib a b = a:fib b (a+b)
+fib a b = a : fib b (a + b)
 
 main = print (sum . filter even $ takeWhile (<= 4000000) (fib 1 2))

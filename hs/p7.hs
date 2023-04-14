@@ -4,6 +4,9 @@
 -- we can see that the 6th prime is 13.
 --
 -- What is the 10 001st prime number?
-import Euler (primes)
+prime n | n < 2     = False
+        | otherwise = all (\x -> mod n x /= 0)
+              (takeWhile (\x -> x^2 <= n) [2..])
+primes = filter prime [2..]
 
 main = print (primes !! 10000)

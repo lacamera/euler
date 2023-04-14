@@ -6,9 +6,10 @@
 --
 -- There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 -- Find the product abc.
-import Euler (pyt)
+pt a b = a < b && b < c && (a^2+b^2 == c^2)
+  where c = 1000 - a - b
 
 ans = [a*b*(1000-a-b)|
-  a <- [1..1000], b <- [a+1..1000], pyt a b]
+  a <- [1..1000], b <- [a+1..1000], pt a b]
 
-main = print . (head $ ans)
+main = print $ (head $ ans)
